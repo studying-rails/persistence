@@ -1,0 +1,10 @@
+<%= form_tag do %>
+  <%= hidden_field_tag 'value', @value + 1 %>
+  <%= submit_tag 'increment' %>
+<% end %>
+<%= @value %>
+<%= form_tag do %>
+  <%= hidden_field_tag 'value', @value - 1 %>
+  <%= submit_tag 'decrement' %>
+<% end %>
+
