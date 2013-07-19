@@ -3,12 +3,17 @@ class CountersController < ApplicationController
 
   end
 
+  def form
+    @value = params[:value].try { |x| x.to_i } || 0
+    render 'base'
+  end
+
   def cookie
     key = :counter
     if (value = params[:value])
       cookies[key] = value.to_i
     end
-    @value = cookies[key] || 0
+    @value = (cookies[key] || 0).to_i
     render 'base'
   end
 

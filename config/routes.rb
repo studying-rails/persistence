@@ -3,7 +3,7 @@ Persistence::Application.routes.draw do
   root to: redirect('/counter')
 
   resource :counter, only: 'show' do
-    %w(cookie database).each do |action|
+    %w(form cookie database).each do |action|
       get action
       post action
     end
